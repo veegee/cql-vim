@@ -15,49 +15,50 @@ endif
 syn case ignore
 
 " General keywords which don't fall into other categories
-syn keyword cqlKeyword         in on and or not if
-syn keyword cqlKeyword         apply batch
-syn keyword cqlKeyword         column columnfamily create delete drop exists
-syn keyword cqlKeyword         family first from
-syn keyword cqlKeyword         index insert into
-syn keyword cqlKeyword         limit key keyspace
-syn keyword cqlKeyword         primary reversed
-syn keyword cqlKeyword         select set truncate
-syn keyword cqlKeyword         where with update use using values
-syn keyword cqlKeyword         table order by
+syn keyword cqlKeyword        in on and or not if
+syn keyword cqlKeyword        list map set
+syn keyword cqlKeyword        apply batch
+syn keyword cqlKeyword        column columnfamily create delete drop exists
+syn keyword cqlKeyword        family first from
+syn keyword cqlKeyword        index insert into
+syn keyword cqlKeyword        limit key keyspace
+syn keyword cqlKeyword        primary reversed
+syn keyword cqlKeyword        select truncate
+syn keyword cqlKeyword        where with update use using values
+syn keyword cqlKeyword        table order by
 
 
 " Column family/table options
-syn keyword cqlKeyword          comparator key_cache_size row_cache_size read_repair_chance
-syn keyword cqlKeyword          gc_grace_seconds default_validation min_compaction_threshold
-syn keyword cqlKeyword          max_compaction_threshold row_cache_save_period_in_seconds
-syn keyword cqlKeyword          key_cache_save_period_in_seconds memtable_flush_after_mins
-syn keyword cqlKeyword          memtable_throughput_in_mb memtable_operations_in_millions replication_on_write
-syn keyword cqlKeyword          replication_on_write default_validation_class key_validation_class
-syn keyword cqlKeyword          rows_cached row_cache_save_period row_cache_keys_to_save keys_cached
-syn keyword cqlKeyword          column_type key_cache_save_period gc_grace replicate_on_write
-syn keyword cqlKeyword          row_cache_provider compaction_strategy column_metadata
-syn keyword cqlKeyword          column_name validation_class subcomparator replication
-syn keyword cqlKeyword          index_name index_type caching dclocal_read_repair_chance
-syn keyword cqlKeyword          bloom_filter_fp_chance populate_io_cache_on_flush compaction
-syn keyword cqlKeyword          compression class sstable_compression
-syn keyword cqlKeyword          clustering
+syn keyword cqlKeyword        comparator key_cache_size row_cache_size read_repair_chance
+syn keyword cqlKeyword        gc_grace_seconds default_validation min_compaction_threshold
+syn keyword cqlKeyword        max_compaction_threshold row_cache_save_period_in_seconds
+syn keyword cqlKeyword        key_cache_save_period_in_seconds memtable_flush_after_mins
+syn keyword cqlKeyword        memtable_throughput_in_mb memtable_operations_in_millions replication_on_write
+syn keyword cqlKeyword        replication_on_write default_validation_class key_validation_class
+syn keyword cqlKeyword        rows_cached row_cache_save_period row_cache_keys_to_save keys_cached
+syn keyword cqlKeyword        column_type key_cache_save_period gc_grace replicate_on_write
+syn keyword cqlKeyword        row_cache_provider compaction_strategy column_metadata
+syn keyword cqlKeyword        column_name validation_class subcomparator replication
+syn keyword cqlKeyword        index_name index_type caching dclocal_read_repair_chance
+syn keyword cqlKeyword        bloom_filter_fp_chance populate_io_cache_on_flush compaction
+syn keyword cqlKeyword        compression class sstable_compression
+syn keyword cqlKeyword        clustering
 
 " Keyspace options
-syn keyword cqlKeyword          placement_strategy strategy_options durable_writes replication_factor
-syn keyword cqlKeyword          strategy_class
+syn keyword cqlKeyword        placement_strategy strategy_options durable_writes replication_factor
+syn keyword cqlKeyword        strategy_class
 
 " Hadoop keywords
-syn keyword cqlKeyword          currentJobTracker
+syn keyword cqlKeyword        currentJobTracker
 
 
 " TODO Fix to use regions properly
-syn keyword cqlColType          standard super
-syn region cqlColumnType        start="column_type\W" end="\"'" contains=cqlColType
+syn keyword cqlColType            standard super
+syn region cqlColumnType          start="column_type\W" end="\"'" contains=cqlColType
 
 " TODO Fix to use regions properly
-syn keyword cqlPStrategy        simplestrategy localstrategy networktopologystrategy
-syn region cqlPlacementStrategy start="placement_strategy\W" end="\"'" contains=cqlPlaceStrategy
+syn keyword cqlPStrategy          simplestrategy localstrategy networktopologystrategy
+syn region cqlPlacementStrategy   start="placement_strategy\W" end="\"'" contains=cqlPlaceStrategy
 
 " Comments
 syn match cqlComment "--.*$" contains=cqlComment
@@ -65,31 +66,31 @@ syntax region cqlComment start="/\*" end="\*/"
 syntax match cqlComment "\/\/.*$"
 
 " Special values
-syn keyword cqlSpecial         false null true
+syn keyword cqlSpecial    false null true
 
 " TODO Add ability to include entire Java class name for compaction strategies
-syn keyword cqlType            SizeTieredCompactionStrategy LeveledCompactionStrategy
+syn keyword cqlType       SizeTieredCompactionStrategy LeveledCompactionStrategy
 
 " Variable Types
-syn keyword cqlType     bytea ascii text varchar uuid varint int bigint
-syn keyword cqlType     bytestype utf8type timeuuidtype timeuuid timestamp
-syn keyword cqlType     blob boolean counter decimal double float
-syn keyword cqlType     serializingcacheprovider
+syn keyword cqlType       bytea ascii text varchar uuid varint int bigint
+syn keyword cqlType       bytestype utf8type timeuuidtype timeuuid timestamp
+syn keyword cqlType       blob boolean counter decimal double float
+syn keyword cqlType       serializingcacheprovider
 
 " Consistency Levels
-syn region cqlType      start="consistency" end="zero"
-syn region cqlType      start="consistency" end="one"
-syn region cqlType      start="consistency" end="quorum"
-syn region cqlType      start="consistency" end="all"
-syn region cqlType      start="consistency" end="local_quorum"
-syn region cqlType      start="consistency" end="each_quorum"
+syn region cqlType        start="consistency" end="zero"
+syn region cqlType        start="consistency" end="one"
+syn region cqlType        start="consistency" end="quorum"
+syn region cqlType        start="consistency" end="all"
+syn region cqlType        start="consistency" end="local_quorum"
+syn region cqlType        start="consistency" end="each_quorum"
 
 " Numbers and hexidecimal values
-syn match cqlNumber            "-\=\<[0-9]*\>"
-syn match cqlNumber            "-\=\<[0-9]*\.[0-9]*\>"
-syn match cqlNumber            "-\=\<[0-9][0-9]*e[+-]\=[0-9]*\>"
-syn match cqlNumber            "-\=\<[0-9]*\.[0-9]*e[+-]\=[0-9]*\>"
-syn match cqlNumber            "\<0x[abcdefABCDEF0-9]*\>"
+syn match cqlNumber       "-\=\<[0-9]*\>"
+syn match cqlNumber       "-\=\<[0-9]*\.[0-9]*\>"
+syn match cqlNumber       "-\=\<[0-9][0-9]*e[+-]\=[0-9]*\>"
+syn match cqlNumber       "-\=\<[0-9]*\.[0-9]*e[+-]\=[0-9]*\>"
+syn match cqlNumber       "\<0x[abcdefABCDEF0-9]*\>"
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
