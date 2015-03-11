@@ -15,12 +15,13 @@ endif
 syn case ignore
 
 " General keywords which don't fall into other categories
-syn keyword cqlKeyword         apply and batch
-syn keyword cqlKeyword         column columnfamily create delete drop
+syn keyword cqlKeyword         in on and or not
+syn keyword cqlKeyword         apply batch
+syn keyword cqlKeyword         column columnfamily create delete drop exists
 syn keyword cqlKeyword         family first from
-syn keyword cqlKeyword         in index insert into
+syn keyword cqlKeyword         index insert into
 syn keyword cqlKeyword         limit key keyspace
-syn keyword cqlKeyword         on or primary reversed
+syn keyword cqlKeyword         primary reversed
 syn keyword cqlKeyword         select set truncate
 syn keyword cqlKeyword         where with update use using values
 syn keyword cqlKeyword         table order by
@@ -103,13 +104,13 @@ if version >= 508 || !exists("did_cql_syn_inits")
 
   HiLink cqlKeyword            Statement
   HiLink cqlSpecial            Special
-  HiLink cqlString             String
+  "HiLink cqlString             String
   HiLink cqlNumber             Number
-  HiLink cqlVariable           Identifier
+  "HiLink cqlVariable           Identifier
   HiLink cqlComment            Comment
   HiLink cqlType               Type
-  HiLink cqlOperator           Statement
-  HiLink cqlConsistency        Statement
+  "HiLink cqlOperator           Statement
+  "HiLink cqlConsistency        Statement
   HiLink cqlColType            Type
   HiLink cqlPStrategy          Type
 
