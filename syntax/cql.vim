@@ -15,7 +15,7 @@ endif
 syn case ignore
 
 " General keywords which don't fall into other categories
-syn keyword cqlKeyword         in on and or not
+syn keyword cqlKeyword         in on and or not if
 syn keyword cqlKeyword         apply batch
 syn keyword cqlKeyword         column columnfamily create delete drop exists
 syn keyword cqlKeyword         family first from
