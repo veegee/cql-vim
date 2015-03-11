@@ -58,12 +58,10 @@ syn region cqlColumnType        start="column_type\W" end="\"'" contains=cqlColT
 syn keyword cqlPStrategy        simplestrategy localstrategy networktopologystrategy
 syn region cqlPlacementStrategy start="placement_strategy\W" end="\"'" contains=cqlPlaceStrategy
 
-" Comments highlight the word as a keyword and comment as blue
-syn region cqlKeyword start=/comment\s*=\s*'/ end=/'/ contains=cqlComment
-syn region cqlKeyword start=/comment\s*=\s*"/ end=/"/ contains=cqlComment
-syn match cqlComment /'\zs\%(\\.\|[^\\']\)*\ze'/ contained
-syn match cqlComment /"\zs\%(\\.\|[^\\"]\)*\ze"/ contained
+" Comments
 syn match cqlComment "--.*$" contains=cqlComment
+syntax region cqlComment start="/\*" end="\*/"
+syntax match cqlComment "\/\/.*$"
 
 " Special values
 syn keyword cqlSpecial         false null true
